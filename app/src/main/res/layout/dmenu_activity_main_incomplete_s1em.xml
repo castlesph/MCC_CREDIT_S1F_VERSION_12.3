@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.Source.S1_MCC.MCC.Main.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/app_logo"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/main_app_version"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="APP V0.00"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/main_merchant"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="COMPANY ABC"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/main_tprofile"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="MID: XXXXXX    |    TID: XXXX"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/main_NetworkCarrier"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="Castles NETWORK"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/idlescreenmsg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginTop="3dp"
+            android:layout_gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/msg_main1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:text=" "
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_here"
+                android:layout_width="53dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="105dp"
+                android:layout_marginLeft="105dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/bkgrnd_btn_here"
+                android:text=" "
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/msg_main1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/supported_apps"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/supported_4" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/black"
+        android:visibility="gone">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/ll_dot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/mcc_menu_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:clickable="false"
+        android:text="Please insert/swipe card or\nSELECT TRANSACTION TYPE:"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btn_credit"
+            android:layout_width="294dp"
+            android:layout_height="70dp"
+            android:background="@drawable/mcc_new_credit"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:textSize="30sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_bancnet"
+            android:layout_width="294dp"
+            android:layout_height="70dp"
+
+            android:background="@drawable/bancnet_new"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitCenter"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_phqr"
+            android:layout_width="294dp"
+            android:layout_height="70dp"
+
+            android:background="@drawable/qrph_new"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitCenter"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_wallet"
+            android:layout_width="294dp"
+            android:layout_height="70dp"
+            android:background="@drawable/mccpay2"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:focusable="true"
+            android:textSize="30sp"
+            android:visibility="visible"
+            android:gravity="center"
+            />
+
+        <Button
+            android:id="@+id/btn_logon"
+            android:layout_width="294dp"
+            android:layout_height="45dp"
+            android:background="@drawable/rndbtn_focus"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:scaleType="fitCenter"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="LOG ON"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_settings2"
+            android:layout_width="294dp"
+            android:layout_height="45dp"
+            android:background="@drawable/rndbtn_focus"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:scaleType="fitCenter"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="SETTINGS"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="41dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_reports"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:layout_marginRight="2dp"
+            android:background="@drawable/shape_bule_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="REPORTS"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_settle"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_bule_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="SETTLEMENT"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_settings"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/shape_bule_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="SETTINGS"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</LinearLayout>

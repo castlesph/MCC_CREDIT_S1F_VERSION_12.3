@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.Source.S1_MCC.MCC"
+    android:sharedUserId="user.castles">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION " />
+
+
+    <application
+        android:name=".MccApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Main.Activity_ctms_update" />
+        <activity android:name=".Main.Activity_ctms_background" />
+        <activity
+            android:name=".Splash"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:icon="@drawable/icon"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Main.MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".OrderCheck"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".PayChoose"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".PayCheck"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".HelloJni"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".PayApprove"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".Recipy"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".Recipy2"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".ICcard"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".MSRcard"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".Load"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".Load2"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".Trans.NETSprompt_amount"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".Trans.NETSprompt_refno"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".SocketActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".model.DispayText"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".Trans.GetAmount"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".db.AndroidDatabaseManager"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".db.ChooseFileActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity
+            android:name=".db.DatabaseManager"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity android:name=".EditDatabaseActivity"></activity>
+        <activity
+        android:name="com.Source.S1_MCC.MCC.model.UserInputString"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:label="@string/app_name"
+        android:theme="@style/FullscreenTheme">
+    </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.model.ConfirmMenu"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.model.ConfirmMenu3"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.model.ConfirmMenuTip"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_NETS.NETS.model.DisplayCardIDLE"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="MCC"
+            android:theme="@style/FullscreenTheme"
+            tools:ignore="MissingClass">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.model.DOptionMenu"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.model.DPopupMenuActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.model.NormalKeyBoard"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.MultiAP_SubAP"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:exported="true"
+            tools:ignore="MissingClass">
+        </activity>
+        <activity
+            android:name=".Trans.AmountEntryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"
+
+            >
+        </activity>
+            <activity android:name=".Trans.S1InputString"
+            android:theme="@style/FullscreenTheme"
+            android:label="@string/app_name"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.SignaturePad.SignaturePadCastles"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.MenuTransactionType"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.MenuTransactionType2"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.Transactions"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+
+            android:theme="@style/FullscreenTheme">
+        </activity>
+         <activity
+        android:name="com.Source.S1_MCC.MCC.Trans.BatchReview"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:label="@string/app_name"
+        android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.model.ConfirmOKMenu"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.model.ConfirmReboot"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+         <activity
+            android:name="com.Source.S1_MCC.MCC.model.PrintFirstReceiptonScreen"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.model.PrintReceiptonScreen"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.model.EliteReceiptonScreen"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.IdleMenuTransactionType"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.IdleMenuTransactionType2"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+        android:name="com.Source.S1_MCC.MCC.Trans.GetExpiryDateUI"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:label="@string/app_name"
+        android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+        android:name="com.Source.S1_MCC.MCC.Trans.GetCVVUI"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:label="@string/app_name"
+        android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.UserConfirmCard"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"
+
+            >
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.DCCFxRateUI"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.DCCFxRateUI2"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.UserConfirmVoid"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.InputAlpha"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.model.ConfirmMenu2"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.EditListView"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustNothing|adjustPan|stateHidden|adjustResize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.EditAdapter"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustNothing|adjustPan|stateHidden|adjustResize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme"
+            tools:ignore="Instantiatable">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.EditListSelected"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustNothing|adjustPan|stateHidden|adjustResize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.model.QwertyUI"
+            android:configChanges="orientation"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name="com.Source.S1_MCC.MCC.Trans.UserManual"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustNothing|adjustPan|stateHidden|adjustResize"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <receiver android:name="com.Source.S1_MCC.MCC.EcrCommandReceiver">
+            <intent-filter>
+                <action android:name="com.Source.EcrProcess" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".Trans.ClearScreen"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+
+            android:theme="@style/FullscreenTheme"></activity>
+     </application>
+
+</manifest>

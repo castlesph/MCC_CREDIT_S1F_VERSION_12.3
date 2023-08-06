@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.Source.S1_MCC.MCC.EditDatabaseActivity">
+
+    <Button
+        android:id="@+id/btn_edit_terminal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_terminal" />
+
+    <Button
+        android:id="@+id/btn_edit_wave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_wave" />
+
+    <Button
+        android:id="@+id/btn_edit_emv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_emv" />
+
+    <Button
+        android:id="@+id/btn_edit_env"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_env" />
+
+    <Button
+        android:id="@+id/btn_edit_mccpay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EDIT MCCPAY" />
+
+    <Button
+        android:id="@+id/btn_edit_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EDIT POST" />
+
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/exit" />
+
+</LinearLayout>

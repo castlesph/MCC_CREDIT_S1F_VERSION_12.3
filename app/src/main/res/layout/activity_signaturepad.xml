@@ -1,0 +1,161 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:signature="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".SignaturePad.SignaturePadCastles">
+
+
+    <RelativeLayout
+        android:id="@+id/signature_pad_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/buttons_container"
+        android:layout_marginBottom="0dp">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_below="@+id/signature_pad"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/darker_gray" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/shape_confirm"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/msg_text_01"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="20dp"
+                android:inputType="textCapCharacters"
+                android:text="TOTAL AMOUNT"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                signature:layout_constraintStart_toStartOf="parent"
+                signature:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/msg_detail_01"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginRight="14dp"
+                android:gravity="right|center_vertical"
+                android:text="PHP 0.00"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                signature:layout_constraintEnd_toEndOf="parent"
+                signature:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                signature:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:text="PLEASE SIGN HERE"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textColor="@color/blue"
+                    android:textSize="18dp"
+                    android:textStyle="bold"></TextView>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@drawable/signpen">
+
+                </ImageView>
+
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/signature_pad_description"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="345dp"
+            android:layout_marginBottom="60dp"
+            android:gravity="center_horizontal"
+            android:text="X---------------------------------------------------------------"
+            android:textColor="#0A0A0A"
+            android:textSize="18sp" />
+
+        <com.github.gcacace.signaturepad.views.SignaturePad
+            android:id="@+id/signature_pad"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/shape_shadow_keypad" />
+
+    </RelativeLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/buttons_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:paddingTop="16dp">
+
+        <Button
+            android:id="@+id/clear_button"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_shadow_back"
+            android:layout_marginRight="10dp"
+            android:text="CLEAR"
+            android:textSize="16sp"
+            signature:layout_constraintBottom_toBottomOf="parent"
+            signature:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_bule_button"
+            android:text="ACCEPT"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            signature:layout_constraintEnd_toEndOf="parent"
+            signature:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+    </android.support.constraint.ConstraintLayout>
+
+
+
+</RelativeLayout>
