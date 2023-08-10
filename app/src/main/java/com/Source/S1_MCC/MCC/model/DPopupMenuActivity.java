@@ -200,7 +200,7 @@ public class DPopupMenuActivity extends DemoAppActivity {
                 Log.i("TINE", "Runnable DPopupMenuActivity");
                 button1.callOnClick();
             }
-        }, 100);
+        }, 10);
 
         //for testing only
 

@@ -2673,6 +2673,7 @@ Java_com_Source_S1_1MCC_MCC_Main_MainActivity_GetAppHeaderDetails(JNIEnv *env, j
     activityObj = (*env)->NewGlobalRef(env, instance);
 
     inTCTRead(1);
+    inCPTReadEx(MCC_HOST);
 
     strGBLVar.inGBLvAppType= get_env_int("APPTYPE"); 
 

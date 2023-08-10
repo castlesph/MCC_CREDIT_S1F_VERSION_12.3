@@ -553,7 +553,7 @@ public class Activity_ctms_background extends DemoAppActivity {
             public void run() {
                 AlertDialog dialog = new AlertDialog.Builder(com.Source.S1_MCC.MCC.Main.Activity_ctms_background.this)
                         .setTitle("CTMS UPDATE")
-                        .setMessage("Pls charge your temrinal to update POS app")
+                        .setMessage("Please charge your terminal to update POS app")
 //                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 //                    @Override
 //                    public void onClick(DialogInterface dialog, int which) {

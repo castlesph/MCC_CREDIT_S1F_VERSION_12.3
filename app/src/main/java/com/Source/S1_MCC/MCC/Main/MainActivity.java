@@ -6195,10 +6195,11 @@ public class MainActivity extends DemoAppActivity implements View.OnClickListene
             public void run() {
                 overridePendingTransition(0, 0); // disable the animation, faster
 
-                if(MainActivity.inTermType == 5)
-                    setContentView(R.layout.displaybox_message_s1em);
-				else
-					setContentView(R.layout.displaybox_message);
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 //Intent intent=getIntent();
                 //String dispmsg=intent.getStringExtra("pass_in_string");
@@ -6220,25 +6221,31 @@ public class MainActivity extends DemoAppActivity implements View.OnClickListene
                 // Show status bar
                 getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+                if(MainActivity.inTermType == 5)
+                    setContentView(R.layout.displaybox_message_s1em);
+                else
+                    setContentView(R.layout.displaybox_message);
+
+                box_msg = (TextView) findViewById(R.id.box_msg);
+                box_msg2 = (TextView) findViewById(R.id.box_msg2);
+                box_msg3 = (TextView) findViewById(R.id.box_msg3);
+                imageView = (ImageView) findViewById(R.id.imageView);
+
                 for (int inIdx = 0; inIdx < msgcnt; inIdx++) {
                     System.out.println("split msg [" + inIdx + "][" + dispmsginfo[inIdx] + "]");
                     switch (inIdx) {
                         case 0: // Message 1
-                            box_msg = (TextView) findViewById(R.id.box_msg);
                             box_msg.setText(dispmsginfo[inIdx]);
                             break;
                         case 1: // Message 2
-                            box_msg2 = (TextView) findViewById(R.id.box_msg2);
                             box_msg2.setText(dispmsginfo[inIdx]);
                             break;
                         case 2: // Message 3
-                            box_msg3 = (TextView) findViewById(R.id.box_msg3);
                             box_msg3.setText(dispmsginfo[inIdx]);
                             break;
                         case 3: // Image Icon
                             image_str = dispmsginfo[inIdx];
                             System.out.println("image_str [" + image_str + "]");
-                            imageView = (ImageView) findViewById(R.id.imageView);
                             wub_lib.ViewImageResourcesByType(image_str, imageView); // sidumili: added to call function in any java, code optimization
                             break;
                         /*case 4: //AAA restart feature
@@ -6304,7 +6311,8 @@ public class MainActivity extends DemoAppActivity implements View.OnClickListene
         }
 		*/
 
-        return user_str;
+
+            return user_str;
     }
 
     public String DisplayStatusBox(String text) throws InterruptedException {
