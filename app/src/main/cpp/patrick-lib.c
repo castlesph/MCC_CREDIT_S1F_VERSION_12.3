@@ -127,14 +127,14 @@ Java_com_Source_S1_1MCC_MCC_Main_MainActivity_inCTOSS_1TerminalStartUp(JNIEnv *e
     //vdDebug_LogPrintf("vdCTOS_InitWaveData");
     //vdCTOS_InitWaveData();
 
-    inRet = inMultiAP_RunIPCCmdTypesEx("com.Source.SHARLS_EMV.SHARLS_EMV", 0x99, bInBuf, usInLen, bOutBuf, &usOutLen);
-    vdDebug_LogPrintf("TerminalStartUp: SHARLS_EMV done - inRet = [%d]", inRet);
-    inRet = inMultiAP_RunIPCCmdTypesEx("com.Source.SHARLS_COM.SHARLS_COM", 0x99, bInBuf, usInLen, bOutBuf, &usOutLen);
-    vdDebug_LogPrintf("TerminalStartUp: SHARLS_COM done - inRet = [%d]", inRet);
-    inRet = inMultiAP_RunIPCCmdTypesEx("com.Source.S1_MCCPAY.MCCPAY", 0x99, bInBuf, usInLen, bOutBuf, &usOutLen);
-    vdDebug_LogPrintf("TerminalStartUp: MCCPAY done - inRet = [%d]", inRet);
-    inRet = inMultiAP_RunIPCCmdTypesEx("com.Source.S1_BANCNET.BANCNET", 0x99, bInBuf, usInLen, bOutBuf, &usOutLen);
-    vdDebug_LogPrintf("TerminalStartUp: BANCNET done - inRet = [%d]", inRet);
+    //inRet = inMultiAP_RunIPCCmdTypesEx("com.Source.SHARLS_EMV.SHARLS_EMV", 0x99, bInBuf, usInLen, bOutBuf, &usOutLen);
+    //vdDebug_LogPrintf("TerminalStartUp: SHARLS_EMV done - inRet = [%d]", inRet);
+    //inRet = inMultiAP_RunIPCCmdTypesEx("com.Source.SHARLS_COM.SHARLS_COM", 0x99, bInBuf, usInLen, bOutBuf, &usOutLen);
+    //vdDebug_LogPrintf("TerminalStartUp: SHARLS_COM done - inRet = [%d]", inRet);
+    //inRet = inMultiAP_RunIPCCmdTypesEx("com.Source.S1_MCCPAY.MCCPAY", 0x99, bInBuf, usInLen, bOutBuf, &usOutLen);
+    //vdDebug_LogPrintf("TerminalStartUp: MCCPAY done - inRet = [%d]", inRet);
+    //inRet = inMultiAP_RunIPCCmdTypesEx("com.Source.S1_BANCNET.BANCNET", 0x99, bInBuf, usInLen, bOutBuf, &usOutLen);
+    //vdDebug_LogPrintf("TerminalStartUp: BANCNET done - inRet = [%d]", inRet);
 
     vdDebug_LogPrintf("strTCT.fECR:%d", strTCT.fECR);
     if(strTCT.fECR)

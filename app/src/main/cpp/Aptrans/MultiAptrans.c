@@ -796,7 +796,9 @@ int inMultiAP_RunIPCCmdTypesEx(char *Appname, int IPC_EVENT_ID, BYTE *inbuf, USH
 	BYTE IPC_IN_BUF[d_MAX_IPC_BUFFER], IPC_OUT_BUF[d_MAX_IPC_BUFFER];
 	BYTE IPC_IN_BUF_STR[d_MAX_IPC_BUFFER], IPC_OUT_BUF_STR[d_MAX_IPC_BUFFER];
 	char szAppname[100+1];
-
+	int begin;
+	int timeoutSecond = 10;
+	
 	strcpy(szAppname, Appname);
 
 	memset(processID,0x00,sizeof(processID));
@@ -823,6 +825,7 @@ int inMultiAP_RunIPCCmdTypesEx(char *Appname, int IPC_EVENT_ID, BYTE *inbuf, USH
 		IPC_IN_LEN = 0;
 		memset(IPC_IN_BUF_STR,0x00,sizeof(IPC_IN_BUF_STR));
 		memset(IPC_OUT_BUF_STR,0x00,sizeof(IPC_OUT_BUF_STR));
+		memset(IPC_OUT_BUF,0x00,sizeof(IPC_OUT_BUF));
 		
 		IPC_IN_BUF[IPC_IN_LEN ++] = IPC_EVENT_ID;
 		if (inlen > 0)
@@ -846,7 +849,7 @@ int inMultiAP_RunIPCCmdTypesEx(char *Appname, int IPC_EVENT_ID, BYTE *inbuf, USH
 			}
 
 			insendloop++;
-			if (insendloop > 0)
+			if (insendloop > 1)
 			{
 				vdDebug_LogPrintf("1.inMultiAP_IPCCmdParentEx TIMEOUT.!!!");
 				if (d_OK == inCTOSS_MultiCheckUnForkAPName(szAppname)
@@ -855,7 +858,7 @@ int inMultiAP_RunIPCCmdTypesEx(char *Appname, int IPC_EVENT_ID, BYTE *inbuf, USH
 					vdDebug_LogPrintf("inCTOS_Kill unfork SubAP = [%s]",szAppname);
 					inCTOS_KillASubAP(szAppname);
 				}
-            	return d_OK;
+            	return d_NO;
 			}
 		} while (1);
 
@@ -863,10 +866,11 @@ int inMultiAP_RunIPCCmdTypesEx(char *Appname, int IPC_EVENT_ID, BYTE *inbuf, USH
 		if (strTCT.inWaitTime <= 0)
 			strTCT.inWaitTime = 100;
 		
-		CTOS_TimeOutSet (TIMER_ID_1 , 200);
+		begin=time(NULL);
 		memset(IPC_OUT_BUF_STR, 0x00, sizeof(IPC_OUT_BUF_STR));
 		while ( (wpid=waitpid(pid, &status, WNOHANG)) != pid )
 		{
+#if 0
 			CTOS_Delay(strTCT.inWaitTime);
 
 			if(CTOS_TimeOutCheck(TIMER_ID_1 )  == d_YES)
@@ -874,7 +878,16 @@ int inMultiAP_RunIPCCmdTypesEx(char *Appname, int IPC_EVENT_ID, BYTE *inbuf, USH
 				vdDebug_LogPrintf("2.inMultiAP_RunIPCCmdTypesEx TIMEOUT.!!!");
             	return d_OK;
 			}
+#endif
 
+				if (d_IPC_CMD_EMV_WGET == IPC_EVENT_ID)
+				{
+					if (time(NULL)-begin > timeoutSecond)
+					{
+						inCTOS_ReForkSubAP(szAppname);
+						return d_NO;
+					}
+				}
 			ipc_len = d_MAX_IPC_BUFFER;
 			// patrick need hendle check status if transaction fail or success.
 			if (inMultiAP_IPCGetParent(IPC_OUT_BUF_STR, &ipc_len) == d_OK)
@@ -890,6 +903,8 @@ int inMultiAP_RunIPCCmdTypesEx(char *Appname, int IPC_EVENT_ID, BYTE *inbuf, USH
 				
 				return d_OK;
 			}
+			else
+				return d_NO;
 		}
 	}
 	else
@@ -897,6 +912,7 @@ int inMultiAP_RunIPCCmdTypesEx(char *Appname, int IPC_EVENT_ID, BYTE *inbuf, USH
 		return d_NO;
 	}
 }
+
 
 int inMultiAP_SendChild(BYTE *inbuf, USHORT inlen)
 {

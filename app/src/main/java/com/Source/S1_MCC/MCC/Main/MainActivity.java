@@ -1680,7 +1680,7 @@ public class MainActivity extends DemoAppActivity implements View.OnClickListene
         int inIdx = 0;
         String szSubAP = ".Main.MainActivity";
 
-        Log.i("Castles", msg);
+        Log.i("Castles ForkSubAP", msg);
 
         try {
             if (isRun(this, msg)) {
@@ -7164,6 +7164,7 @@ public class MainActivity extends DemoAppActivity implements View.OnClickListene
     //tine - to maintain fullscreen after screen is interrupted by warnings
     @Override
     protected void onResume() {
+        Log.i(TAG, "****S1_MCC onResume: ****");
 	    super.onResume();
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);    //Tine:  Show Status Bar
 

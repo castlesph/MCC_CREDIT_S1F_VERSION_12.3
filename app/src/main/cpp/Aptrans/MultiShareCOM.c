@@ -894,7 +894,7 @@ int inCTOSS_COMM_Receive(TRANS_DATA_TABLE *srTransPara,unsigned char *uszRecData
 								vdDebug_LogPrintf("---strCOM.inReceiveLen[%d],.inIPHeader=[%d]",strCOM.inReceiveLen,strCPT.inIPHeader);
 								vdDebug_LogPrintf("rec data==[%d][%s]",strCOM.inReceiveLen,szReceiveData);
 
-								memcpy(&uszRecData[inReceivedDataIndex], (void *const)  szReceiveData, strCOM.inReceiveLen);
+								memcpy(uszRecData[inReceivedDataIndex], (void *const)  szReceiveData, strCOM.inReceiveLen);
 								usResult = inReceivedDataIndex + strCOM.inReceiveLen;
 							}
 						}
