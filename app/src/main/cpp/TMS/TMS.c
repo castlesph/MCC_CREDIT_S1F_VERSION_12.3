@@ -1438,13 +1438,16 @@ int inCTOS_CTMSUPDATE(void)
 	
     vdDebug_LogPrintf("saturn =====1.inCTOS_CTMSUPDATE=====.");
 
-	inTCTRead(1);
+	//inTCTRead(1);
     inTMSEXRead(1);
 	inCPTRead(1);
 
+	strTCT.inMinBattery = 35;
 	inRet = inCheckBattery();	
 	if(d_OK != inRet)
 		return inRet;
+	
+	inTCTRead(1);
 	
 	// validate serial num -- sidumili
 	if (strlen(strTMSEX.szSerialNo) < SERIAL_NUM_LEN || atoi(strTMSEX.szSerialNo) <= 0)

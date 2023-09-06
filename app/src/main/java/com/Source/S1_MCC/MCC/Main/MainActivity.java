@@ -7504,6 +7504,12 @@ public class MainActivity extends DemoAppActivity implements View.OnClickListene
 				System.exit(0);
 			}
 
+            Log.i(TAG, "Networknm =" + Networknm);
+            if(Networknm.equals("0x")) {
+                Networknm = "Not connected";
+            }
+
+
 			carrier_name.setText("Network: " + Networknm);
 
 			mPager = (ViewPager) findViewById(R.id.viewpager);

@@ -1,5 +1,7 @@
 package com.Source.S1_MCC.MCC.Trans;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -162,13 +164,15 @@ public class Transactions extends DemoAppActivity {
         Networknm = "Network: " + operatorHolder.getOperatorName();
         textView_tprofile.setText(AppDetail);
 
-        if (ssid.equals("<unknown ssid>") || (ssid.length() <=0))
+        Log.i(TAG, "wifi ssid=" + ssid);
+        if (ssid.equals("<unknown ssid>") || (ssid.length() <=0) || ssid.equals("0x"))
             Networknm = "Network: " + operatorHolder.getOperatorName();
         else
             Networknm = "Network: " + ssid;
 
         if (Networknm.equals("Network: "))
             Networknm = "Network: NOT CONNECTED";
+
 
         Log.i("AAA Networkname", "Networknm: " + Networknm);
         textView_carrier_name.setText(Networknm);
